@@ -2,7 +2,7 @@ import axios from 'axios'
  let url = 'http://localhost:5000'
 
  if(process.env.NODE_ENV === 'production'){
-    url = ''
+    url = 'https://musicon-an8i.onrender.com/'
    }
 
   const  Api = axios.create({
