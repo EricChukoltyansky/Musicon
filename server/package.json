@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "deploy-server": "npm i",
-    "server": "node server.js",
+    "start": "node server.js",
     "client": "npm start --prefix client",
     "copy": "cp -r ../client/build ./",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
