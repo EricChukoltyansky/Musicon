@@ -28,7 +28,7 @@ const Home = () => {
       const link = await data?.[0]?.link;
       console.log(link);
       const id = link && link.split("=");
-      setId(() => id[1]);
+      setId(() => id?.[1]);
       console.log(id);
       setIsLoading(false);
       console.log(data);
