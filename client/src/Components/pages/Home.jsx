@@ -25,10 +25,10 @@ const Home = () => {
       const { data } = await Api.post("/searchVideo", {
         convertedText: text,
       });
-      const link = await data?.[0]?.link;
+      const link = await data[0]?.link;
       console.log(link);
       const id = link && link.split("=");
-      setId(() => id?.[1]);
+      setId(() => id[1]);
       console.log(id);
       setIsLoading(false);
       console.log(data);
