@@ -17,24 +17,22 @@ export const scrapeFromYoutube = async (value) => {
         .forEach((e, i) => {
           let obj = {
             title: e.innerText,
-            link: `https://www.youtube.com/${e
+            link: `https://www.youtube.com${e
               .querySelector("#video-title")
               .getAttribute("href")}`,
-            // id: `https://www.youtube.com/watch?v=${e
-            //   .querySelector("#video-id")
-            //   .getAttribute("href")}`,
           };
           if (i < 1) {
             arr.push(obj);
           }
           return;
         });
+      console.log(arr);
       return arr;
     });
 
-    console.dir(results)
+    console.dir(results);
     browser.close();
-    console.log(results)
+    console.log(results);
     return results;
   } catch (err) {
     console.error(err);

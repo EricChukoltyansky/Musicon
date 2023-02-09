@@ -56,7 +56,7 @@ app.get("/logout", function (req, res, next) {
 app.post("/searchVideo", async (req, res) => {
   console.log("req body converted", req.body.convertedText);
   const getData = await scrapeFromYoutube(req.body.convertedText);
-  console.log(getData);
+  console.log("getData",getData);
   res.status(200).send(getData);
 });
 console.log(__dirname);
