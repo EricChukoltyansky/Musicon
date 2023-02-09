@@ -26,6 +26,7 @@ const Home = () => {
         convertedText: text,
       });
       const link = await data[0].link;
+      console.log(link);
       const id = link && link.split("=");
       setId(() => id[1]);
       console.log(id);
