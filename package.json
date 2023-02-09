@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "client": "npm start --prefix client",
+    "server":"node server.js",
     "copy": "cp -r client/build ./",
     "postbuild": "npm i --prefix client && npm run build --prefix client && npm run copy"
   },
