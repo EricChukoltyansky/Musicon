@@ -20,17 +20,17 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = async () => {
+    console.log(text);
     try {
-      setIsLoading(true);
       const { data } = await Api.post("/searchVideo", {
         convertedText: text,
       });
-      console.log(data);
       const link = await data[0].link;
       const id = link && link.split("=");
       setId(() => id[1]);
       console.log(id);
       setIsLoading(false);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
