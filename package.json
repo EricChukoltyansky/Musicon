@@ -1,0 +1,21 @@
+{
+  "name": "musicon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd ./server && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricChukoltyansky/Musicon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricChukoltyansky/Musicon/issues"
+  },
+  "homepage": "https://github.com/EricChukoltyansky/Musicon#readme"
+}
