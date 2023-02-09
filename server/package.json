@@ -13,16 +13,13 @@
     "postbuild": "npm i  --prefix ../client && npm run build --prefix ../client && npm run copy"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Amalmd/Musicon.git"
+    "type": "git"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Amalmd/Musicon/issues"
-  },
-  "homepage": "https://github.com/Amalmd/Musicon#readme",
+  
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
