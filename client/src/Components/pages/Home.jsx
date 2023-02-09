@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SerchInput from "../SerchInput";
 import { Spinner } from "reactstrap";
 import { Api } from "../../api/Api";
+import { useEffect } from "react";
 const Div = styled.div`
   width: 100%;
   display: grid;
@@ -18,6 +19,7 @@ const Home = () => {
   const [text, setText] = useState("");
   const [Id, setId] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [fetchedData, setFetchedData] = useState([]);
 
   const handleClick = async () => {
     console.log(text);
@@ -25,7 +27,8 @@ const Home = () => {
       const { data } = await Api.post("/searchVideo", {
         convertedText: text,
       });
-      const link = await data[0]?.link;
+      setFetchedData(() => data);
+      const link = await fetchedData[0].link;
       console.log(link);
       const id = link && link.split("=");
       setId(() => id[1]);
@@ -36,6 +39,10 @@ const Home = () => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (!fetchedData) return;
+  }, [fetchedData]);
 
   return (
     <Div>
