@@ -40,6 +40,6 @@ export const scrapeFromYoutube = async (value) => {
     console.log(results);
     return results;
   } catch (err) {
-    console.error(err);
+    console.error("e", err);
   }
 };
