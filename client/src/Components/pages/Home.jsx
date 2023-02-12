@@ -27,6 +27,7 @@ const Home = () => {
       const { data } = await Api.post("/searchVideo", {
         convertedText: text,
       });
+      console.log("data from scraper", data);
       setFetchedData(() => data);
       const link = await fetchedData[0].link;
       console.log(link);
