@@ -1,6 +1,6 @@
 // import puppeteer from "puppeteer";
 import puppeteer from "puppeteer-extra";
-const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+import StealthPlugin from ("puppeteer-extra-plugin-stealth");
 
 puppeteer.use(StealthPlugin());
 
@@ -11,10 +11,11 @@ export const scrapeFromYoutube = async (value) => {
     const input = searchValue.split(" ").join("+");
     // console.log(input)
     const browser = await puppeteer.launch({
-      headless: true,
+      headless: false,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const page = await browser.newPage();
+
     await page.setDefaultNavigationTimeout(0);
     await page.goto(`https://www.youtube.com/results?search_query=${input}`);
     const results = await page.evaluate(() => {
