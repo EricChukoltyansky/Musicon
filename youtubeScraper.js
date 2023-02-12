@@ -1,8 +1,4 @@
-import puppeteer from "puppeteer-extra";
-
-const stealthPlugin = require("puppeteer-extra-plugin-stealth");
-
-puppeteer.use(stealthPlugin());
+import puppeteer from "puppeteer";
 
 export const scrapeFromYoutube = async (value) => {
   const searchValue = value;
