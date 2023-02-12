@@ -2,11 +2,14 @@ import puppeteer from "puppeteer";
 
 export const scrapeFromYoutube = async (value) => {
   const searchValue = value;
-  console.log(searchValue)
+  console.log(searchValue);
   try {
     const input = searchValue.split(" ").join("+");
     // console.log(input)
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
     const page = await browser.newPage();
     await page.goto(`https://www.youtube.com/results?search_query=${input}`);
     const results = await page.evaluate(() => {
