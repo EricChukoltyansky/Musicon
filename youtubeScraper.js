@@ -1,4 +1,8 @@
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-extra";
+
+const stealthPlugin = require("puppeteer-extra-plugin-stealth");
+
+puppeteer.use(stealthPlugin());
 
 export const scrapeFromYoutube = async (value) => {
   const searchValue = value;
@@ -41,12 +45,4 @@ export const scrapeFromYoutube = async (value) => {
   } catch (err) {
     console.error(err);
   }
-};
-
-export const scrapeFromYoutubeNo = async (value) => {
-  const searchValue = value;
-  let arr = [];
-  try {
-    return `https://www.youtube.com/results?search_query=${input}`;
-  } catch (err) {}
 };
