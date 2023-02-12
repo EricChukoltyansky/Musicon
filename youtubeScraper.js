@@ -6,7 +6,7 @@ puppeteer.use(StealthPlugin());
 
 export const scrapeFromYoutube = async (value) => {
   const searchValue = value;
-  console.log(searchValue);
+  console.log("searchValue",searchValue);
   try {
     const input = searchValue.split(" ").join("+");
     // console.log(input)

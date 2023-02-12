@@ -4,6 +4,9 @@
   "description": "",
   "main": "server.js",
   "type": "module",
+  "engines": {
+      "node": ">=14 <15"
+    },
   "scripts": {
     "client": "npm start --prefix client",
     "server": "node server.js",
