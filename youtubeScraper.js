@@ -11,7 +11,7 @@ export const scrapeFromYoutube = async (value) => {
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const page = await browser.newPage();
-    page.setDefaultNavigationTimeout(0);
+    await page.setDefaultNavigationTimeout(0);
     await page.goto(`https://www.youtube.com/results?search_query=${input}`);
     const results = await page.evaluate(() => {
       let arr = [];
